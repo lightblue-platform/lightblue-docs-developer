@@ -33,7 +33,7 @@ chkconfig mongod on
 service mongod start
 ```
 
-## Deploy lightblue!
+## Initial Deployment
 Assuming you have followed steps to [build for wildfly](../build_source/README.md).
 
 Two things need to be done to setup lightblue.  First, deploy the lightblue module to wildfly:
@@ -47,7 +47,13 @@ And now the RPMs can be deployed:
 sudo yum install `find -name lightblue*.rpm`
 ```
 
-## Uninstall!
+## Deploy Your Changes
+After making changes to code, to deploy the updates:
+```
+sudo yum update `find -name lightblue*.rpm`
+```
+
+## Uninstall
 If you decide to uninstall, here's how to cleanup everything previously done.
 
 ```

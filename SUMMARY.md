@@ -2,8 +2,16 @@
 
 * [Project Structure](project_structure/README.md)
 * [Build from Source](build_source/README.md)
-* [Deploy lightblue on Fedora 20](deploy_lightblue_locally/README.md)
+* [Develop on Fedora 20](deploy_lightblue_locally/README.md)
+* [Develop on OpenShift](develop_on_openshift/README.md)
 * [Functional Tests](functional_tests/README.md)
 * [Proposed Roadmap](proposed_roadmap/README.md)
+* [Glossary](glossary/README.md)
 * [Details of lightblue-core](modules_and_packages/README.md)
+* [Configuration](configuration/README.md)
+* [Use Cases: Data Management Application](use_case_data_app/README.md)
+* [Use Cases: Metadata Management Application](use_cases_metadata_app/README.md)
+* [Application Specification: Metadata Management](application_specification_metadata_management/README.md)
+* [Key Decisions](key_decisions/README.md)
+* [Troubleshoot](troubleshoot/README.md)
 
