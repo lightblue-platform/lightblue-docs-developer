@@ -26,7 +26,7 @@ There are two management applications that enable easier use of metadata and dat
 https://github.com/lightblue-platform/lightblue-applications
 
 ## openshift-lightblue-all
-All rest apps and web apps bundled into a single WAR for deployment on OpenShift.  See [lightblue in action](lightblue_in_action/README).
+All rest apps and web apps bundled into a single WAR for deployment on OpenShift.  See [lightblue in action](../develop_on_openshift/README.md).
 
 https://github.com/lightblue-platform/openshift-lightblue-all
 

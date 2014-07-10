@@ -23,7 +23,7 @@ For each field, define a hook. For instance, user.firstname would have audit-hoo
 Short answer: no.
 
 More details:
-* Performance of Gson is bad compared to other options, see output of [this unit test](https://github.com/lightblue-platform/lightblue/blob/master/rest/metadata/src/test/java/com/redhat/lightblue/rest/metadata/GsonTest.java)
+* Performance of Gson is bad compared to other options.
 * Handling of generics is not good, so if model contains generics use something else
 
 Recommend only using Gson for quick and simple hacks and only in testing.  Recommend not using in releasable code.
@@ -32,7 +32,7 @@ Recommend only using Gson for quick and simple hacks and only in testing.  Recom
 After some fiddling in [Ansible](http://www.ansible.com/home) and considering other options it has been decided we will continue using puppet.  Our goal is to include puppet configurations as part of lightblue, but that it will not be required for configuration.
 
 ## How will we do aggregation of lightblue data and other data sources?
-This question was asked before we got down the path of multiple controller implementations.  The answer is aggregation functionality that will be added in [technical deliverable 3](Technical-Deliverables#td3---aggregation) and the existence of other controller implementations.  [Technical deliverable 5](Technical-Deliverables#td5---rdbms-support) is to implement a generic RDBMS controller.
+This question was asked before we got down the path of multiple controller implementations.  The answer is aggregation functionality that will be added in [technical deliverable 3](../proposed_roadmap.md#td3-aggregation) and the existence of other controller implementations.  [Technical deliverable 5](../proposed_roadmap.md#td5-rdbms-support) is to implement a generic RDBMS controller.
 
 ## How will metadata be structured?
 *    Metadata is split into two sections:  entity info and schema.
@@ -42,7 +42,7 @@ This question was asked before we got down the path of multiple controller imple
 
 ## How will metadata be versioned?
 * Versions are tracked at the entity level only (entity schema).
-* Versions are strings following [Standard: Versions](Standard:-Versions).
+* Versions are strings following the [versioning standard in the user guide](../../lightblue-user-guide/standards/versioning.md).
 * Each version of an entity's metadata is active, deprecated, or disabled.
 * An active or deprecated version of the requested entity must be specified by every client request.
 * Each entity may keep a default version.
