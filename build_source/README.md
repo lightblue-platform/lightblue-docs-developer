@@ -23,8 +23,8 @@ mvn clean install
 ```
 
 ## Build for Wildfly
-Builds lightblue for deployment on wildfly.  The only difference is where the artifacts get deployed on the filesystem.  By default lightblue builds for deployment on JBoss EAP6.
+Builds lightblue RPMs for deployment on wildfly.  The only difference is where the artifacts get deployed on the filesystem.  By default lightblue builds for deployment on JBoss EAP6.
 
 ```
-mvn clean install -P wildfly
+mvn clean install -P wildfly -P rpm
 ```
