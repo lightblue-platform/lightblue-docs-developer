@@ -62,6 +62,7 @@ A MongoDB datasource definition looks like this:
      "type" : "com.redhat.lightblue.mongo.config.MongoConfiguration",
      "metadataDataStoreParser" : "com.redhat.lightblue.metadata.mongo.MongoDataStoreParser",
      "ssl" : false,
+     "noCertValidation" : false,
      "database" : "mongo",
      "credentials" : {
        "mechanism": "MONGODB_CR_MECHANISM",
@@ -84,6 +85,8 @@ A MongoDB datasource definition looks like this:
     metadata, this should be initialized to the Java class
     implementing the metadata DataStoreParser interface.
   * ssl : Whether to use ssl for database communications
+  * noCertValidation: If true, ssl certificate validation will be disabled. Do not
+    use this in production environments.
   * database : The database in MongoDB to connect to
   * credentials : This can be an array of credentials, or a single credential object
      * mechanism: Possible values are GSSAPI_MECHANISM, MONGODB_CR_MECHANISM, MONGODB_X509_MECHANISM, PLAIN_MECHANSM
