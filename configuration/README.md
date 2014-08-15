@@ -114,14 +114,17 @@ file has the following format:
 ```
 {
   "type" : <configuration class name>,
+  "hookConfigurationParsers": [<hook configuration parser class names>],
   <configuration>
 }
 ```
 
 The "type" field gives the Java class name implementing
-com.redhat.lightblue.config.metadata.MetadataConfiguration. Once the
+`com.redhat.lightblue.config.metadata.MetadataConfiguration`. Once the
 metadata configuration is read, an instance of this class is created,
 and the configuration JSON object is given to it to initialize itself.
+
+The "hookConfigurationParsers" is an optional list of Java class names implementing `com.redhat.lightblue.metadata.parser.HookConfigurationParser`.  One example implementing class is `com.redhat.lightblue.hook.audit.AuditHookConfigurationParser` in project [lightblue-audit-hook](https://github.com/lightblue-platform/lightblue-audit-hook).
 
 ### MongoDB Metadata
 
@@ -138,6 +141,20 @@ For MongoDB metadata implementation, configuration looks like this:
   * dataSource : Name of the datasource in datasources configuration
     where metadata is stored.
   * collection: MongoDB collection used to store metadata
+
+### Example Metadata Configuration
+Example with MongoDB metadata config and audit hook parser:
+
+```
+{
+    "type" : "com.redhat.lightblue.mongo.config.MongoMetadataConfiguration",
+    "hookConfigurationParsers": [
+        "com.redhat.lightblue.hook.audit.AuditHookConfigurationParser"
+    ],
+    "dataSource" : "metadata",
+    "collection": "metadata"
+}
+```
 
 ## CRUD
 
