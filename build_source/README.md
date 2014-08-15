@@ -16,6 +16,16 @@ git clone https://github.com/lightblue-platform/lightblue.git
 cd lightblue
 ```
 
+## Setup Environment
+There is a possibility of a [man-in-the-middle attack](https://github.com/lightblue-platform/lightblue/issues/106) when getting artifacts from Maven Central with default settings.  The root directory of each maven project has a settings.xml file that will override the default.  It is recommended that this setup is used.  There are a few options for using the override:
+* Copy the settings.xml to your ~/.m2 directory.
+* Specify the file with each build using option `-s ./settings.xml`.
+* [Configure this yourself](http://central.sonatype.org/pages/consumers.html#apache-maven).
+* Do nothing, use defaults (**NOT RECOMMENDED!**).
+
+This documentation assumes the first option, copying settings.xml to ~/.m2 directory, and does not make mention of this issue again.
+
+
 ## Build Options
 You can build lightblue without any particular options set.  It will create all the java artifacts but not package them for deployment (unless you want to just grab the WAR).
 ```
