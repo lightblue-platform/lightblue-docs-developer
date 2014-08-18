@@ -55,7 +55,7 @@ files.
 
 Most of the classes in the metadata package represent the JSON
 constructs in the [metadata
-specification](https://github.com/bserdar/lightblue/wiki/Language-Spec-Metadata). The
+specification](http://jewzaam.gitbooks.io/lightblue-user-guide/language_specification/metadata.html). The
 two top-level classes are:
 
 * `com.redhat.lightblue.metadata.Metadata`: The interface that
