@@ -7,16 +7,22 @@ The main repository at this time.  It is broken into three major sub-projects wh
 
 https://github.com/lightblue-platform/lightblue
 
-## lightblue/lightblue-core
+## lightblue-core
 Core lightblue fucntionality.  In scope are the following in the puzzle:
 * lightblue CRUD Layer
 * abstract code for the metadata and controller plugins
 
-## lightblue/lightblue-metadata-mongo
-The MongoDB metadata and CRUD controller implementation.
+## lightblue-mongo
+The MongoDB CRUD controller implementation.
 
-## lightblue/lightblue-rest
+## lightblue-rdbms
+The RDBMS CRUD controller implementation.
+
+## lightblue-rest
 The lightblue REST API and implementation.
+
+## lightblue-audit-hook
+The generic lightblue audit-hook implementation.
 
 ## lightblue-applications
 There are two management applications that enable easier use of metadata and data services.  This repository is for that code.
@@ -35,10 +41,14 @@ All functional (integration) tests and load tests for lightblue.  These tests ca
 
 https://github.com/lightblue-platform/lightblue-tests
 
-## lightblue-docs
-The documentation you are reading right now.
+## lightblue-docs-overview
+[Lightblue overview documentation](http://jewzaam.gitbooks.io/lightblue/).
 
-https://github.com/lightblue-platform/lightblue-docs
+## lightblue-docs-user
+[Lightblue user guide](http://jewzaam.gitbooks.io/lightblue-user-guide/).
+
+## lightblue-docs-developer
+[Lightblue developer manual](http://jewzaam.gitbooks.io/lightblue-developer-manual/).
 
 ## pyresttest
 A python based rest testing framework forked from [svanoot/pyresttest](https://github.com/svanoort/pyresttest).  Functionality is added as needed and all changes are sent up-stream.

@@ -38,8 +38,9 @@ Assuming you have followed steps to [build for wildfly](../build_source/README.m
 
 Two things need to be done to setup lightblue.  First, deploy the lightblue module to wildfly:
 ```
+cd lightblue-rest
 sudo mkdir -p /usr/share/wildfly/modules/com/redhat/lightblue/main
-sudo cp lightblue-rest/etc/mongo/* /usr/share/wildfly/modules/com/redhat/lightblue/main
+sudo cp etc/mongo/* /usr/share/wildfly/modules/com/redhat/lightblue/main
 ```
 
 And now the RPMs can be deployed:
