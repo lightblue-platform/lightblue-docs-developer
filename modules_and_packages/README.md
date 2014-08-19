@@ -1,14 +1,14 @@
-# Details of lightblue-core
+# Details of lightblue
 
 ## Overview
 
-The purpose of this document is to give an overview of the lightblue
-code structure and of some of the design decisions that may not be
+The purpose of this document is to give an overview of key lightblue
+structure and of some of the design decisions that may not be
 obvious from the code alone.
 
 ### Core
 
-The following components constitute the lightblue core:
+The following components constitute `lightblue-core`:
 
 * `util`: Contains the common utility classes and methods.
 
@@ -42,9 +42,9 @@ The components for managing these extensions are:
 * `config`: provides an implementation of the configuration
 management layer using JSON configuration files.
 
-* `mongo/metadata`: provide the MongoDB implementation of metadata components.
-
-* `mongo/crud`: provide the MongoDB implementation of CRUD components.
+And in the `lightblue-mongo` repo:
+* `metadata`: provide the MongoDB implementation of metadata components.
+* `crud`: provide the MongoDB implementation of CRUD components.
 
 Once these extensions are in place, classes that configure lightblue
 components and wire them together should be developed. The `config`
@@ -61,8 +61,8 @@ two top-level classes are:
 * `com.redhat.lightblue.metadata.Metadata`: The interface that
 needs to be implemented by a metadata manager. The responsibilities of
 this implementation is to store and maintain metadata information in
-some sort of datastore. `mongo/metadata` project provides a metadata
-implementation that stores entity metadata in a MongoDB collection.
+some sort of datastore. In `lightblue-mongo` repo in the `metadata` module a metadata
+implementation that stores entity metadata in a MongoDB collection is available.
 
 * `com.redhat.lightblue.metadata.EntityMetadata`: This is the POJO that
 describes the entity metadata. There are two sections:
@@ -252,7 +252,7 @@ BSONParser parser = new BSONParser(extensions, typeResolver);
 
 ### Mongo Metadata
 
-The mongo/metadata project contains the MongoDB implementation of
+The `lightblue-mongo` repo's `metadata` module contains the MongoDB implementation of
 Metadata interface. This project contains the following classes:
 
 * BSONParser: Implementation of MetadataParser for BSON

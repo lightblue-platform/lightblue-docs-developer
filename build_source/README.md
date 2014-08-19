@@ -37,13 +37,17 @@ There are two profiles that are optional at this time:
 ## Build RPM's for JBoss EAP
 The default build of RPM's is for JBoss EAP, so simply include the `rpm` profile.
 
+To get all dependencies built locally instead of pulled from sonatype follow [Checkout and Build](#checkout-and-build) steps above.
+
 ```
 cd lightblue-rest
 mvn clean install -P rpm -s ./settings.xml
 ```
 
 ## Build RPM's for Wildfly
-Builds lightblue RPMs for deployment on wildfly.  The only difference is where the artifacts get deployed on the filesystem.  By default lightblue builds for deployment on JBoss EAP6.  To get all dependencies built locally instead of pulled from sonatype follow [Checkout and Build](#checkout-and-build) steps above.
+Builds lightblue RPMs for deployment on wildfly.  The only difference is where the artifacts get deployed on the filesystem.  By default lightblue builds for deployment on JBoss EAP6.
+
+To get all dependencies built locally instead of pulled from sonatype follow [Checkout and Build](#checkout-and-build) steps above.
 
 ```
 cd lightblue-rest

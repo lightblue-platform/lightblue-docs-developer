@@ -13,7 +13,7 @@ Core lightblue fucntionality.  In scope are the following in the puzzle:
 * abstract code for the metadata and controller plugins
 
 ## lightblue-mongo
-The MongoDB CRUD controller implementation.
+The MongoDB metadata and CRUD controller implementation.
 
 ## lightblue-rdbms
 The RDBMS CRUD controller implementation.
