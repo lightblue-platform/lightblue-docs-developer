@@ -22,13 +22,17 @@ Issues not ready for any action can be discussed on the [developer forum](http:/
     2. Move issue to "In Progress" column.
     3. Develop change in a fork.
     4. Issue pull request when work is complete.  Please include reference to the original issue.
-6. If a non-collaborator issued the PR it will be put into the "Ready" column.
-7. If a collaborator issued the PR it will be put in the "Ready for Review" column.
-    * Note, please leave the original issue in the "In Progress" column until PR is merged.
+6. PR goes to the "In Progress" column for collaborators.
+    * Leave the original issue in the "In Progress" column until PR is merged.
+    * Not put in Ready for Review simply to allow continued work against the PR.
+    * When done, move PR to "Ready for Review".
+7. PR goes to the "Ready for Review" column for non-collaborators.
+    * Rational is that a PR from external is issued only when the code is done.
 8. Someone other than the creator of the PR moves the PR to the "In Review" column.
 9. If review is good (no issues, clean merge, travis-ci build successful):
     1. The PR is merged.
-    2. Remove the "in review" tag from the PR.
-    3. Remove the "in progress" tag from the original issue.
+    2. Remove the "in review" tag from the PR. [optional]
+    3. Remove the "in progress" tag from the original issue. [optional]
     4. If the original issue was not linked to the PR and therefore not auto-closed, the original issue is closed.
 10. If there is a question or issue with the PR it is moved back to the "In Progress" column.
+    * Note open question on how to handle this for non-collaborators, since they cannot move cards around on waffle.io.
