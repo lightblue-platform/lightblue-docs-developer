@@ -42,7 +42,7 @@ This question was asked before we got down the path of multiple controller imple
 
 ## How will metadata be versioned?
 * Versions are tracked at the entity level only (entity schema).
-* Versions are strings following the [versioning standard in the user guide](http://jewzaam.gitbooks.io/lightblue-user-guide/standards/versioning.html).
+* Versions are strings following the [versioning standard in the user guide](http://docs.lightblue.io/standards/versioning.html).
 * Each version of an entity's metadata is active, deprecated, or disabled.
 * An active or deprecated version of the requested entity must be specified by every client request.
 * Each entity may keep a default version.

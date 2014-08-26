@@ -47,13 +47,13 @@ All functional (integration) tests and load tests for lightblue.  These tests ca
 https://github.com/lightblue-platform/lightblue-tests
 
 ## lightblue-docs-overview
-[Lightblue overview documentation](http://jewzaam.gitbooks.io/lightblue/).
+[Lightblue overview documentation](http://lightblue.io/).
 
 ## lightblue-docs-user
-[Lightblue user guide](http://jewzaam.gitbooks.io/lightblue-user-guide/).
+[Lightblue user guide](http://docs.lightblue.io/).
 
 ## lightblue-docs-developer
-[Lightblue developer manual](http://jewzaam.gitbooks.io/lightblue-developer-manual/).
+[Lightblue developer manual](http://dev.docs.lightblue.io/).
 
 ## pyresttest
 A python based rest testing framework forked from [svanoot/pyresttest](https://github.com/svanoort/pyresttest).  Functionality is added as needed and all changes are sent up-stream.

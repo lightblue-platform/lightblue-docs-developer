@@ -1,7 +1,7 @@
 # Contribution Process
 Not to sound process heavy, but through experience and best practicies we have landed on some flow to how changes happen to lightblue related projectcs.  This document intends to capture that to make it clear how thinks should work.
 
-NOTE: this is NOT set in stone!  This is expected to change over time as better ways are developed and agreed on.  If you disagree with this document it's a great topic for discussion on the [developer forum](http://lightblue-dev.1011138.n3.nabble.com/)!
+NOTE: this is NOT set in stone!  This is expected to change over time as better ways are developed and agreed on.  If you disagree with this document it's a great topic for discussion on the [developer forum](http://dev.forum.lightblue.io)!
 
 ## Tools
 There are two boards setup on [waffle.io](http://waffle.io) to bring all issues into a single kanban board:
@@ -11,7 +11,7 @@ There are two boards setup on [waffle.io](http://waffle.io) to bring all issues 
 The flow of issues through each board is the same.
 
 ## General Flow
-Issues not ready for any action can be discussed on the [developer forum](http://lightblue-dev.1011138.n3.nabble.com/), [user forum](http://lightblue-users.1011140.n3.nabble.com/), or opened directly as issues in the appropriate github repository.  Once an issue is opened the general flow is:
+Issues not ready for any action can be discussed on the [developer forum](http://dev.forum.lightblue.io), [user forum](http://forum.lightblue.io/), or opened directly as issues in the appropriate github repository.  Once an issue is opened the general flow is:
 
 1. Issue goes to "Backlog" column.
 2. Someone assigns a milestone [optional].
