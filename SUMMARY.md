@@ -5,7 +5,7 @@
 * [Project Structure](project_structure/README.md)
 * [Proposed Roadmap](proposed_roadmap/README.md)
 * [Details of lightblue-core](modules_and_packages/README.md)
-* [Creating a new controller](creating_a_new_controller/README)
+* [Creating a new controller](creating_a_new_controller/README.md)
 * [Contribution Process](development_process/README.md)
 * [Build from Source](build_source/README.md)
 * [Develop on Fedora 20](deploy_lightblue_locally/README.md)
