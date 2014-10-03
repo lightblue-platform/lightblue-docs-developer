@@ -4,9 +4,8 @@ Not to sound process heavy, but through experience and best practicies we have l
 NOTE: this is NOT set in stone!  This is expected to change over time as better ways are developed and agreed on.  If you disagree with this document it's a great topic for discussion on the [developer forum](http://dev.forum.lightblue.io)!
 
 ## Tools
-There are two boards setup on [waffle.io](http://waffle.io) to bring all issues into a single kanban board:
-* [development board](https://waffle.io/lightblue-platform/lightblue)
-* [documentation board](https://waffle.io/lightblue-platform/lightblue-docs-overview)
+There is one board setup on [waffle.io](http://waffle.io) to bring all issues into a single kanban board:
+* [documentation & development board](https://waffle.io/lightblue-platform/lightblue)
 
 The flow of issues through each board is the same.
 
@@ -36,3 +35,6 @@ Issues not ready for any action can be discussed on the [developer forum](http:/
     4. If the original issue was not linked to the PR and therefore not auto-closed, the original issue is closed.
 10. If there is a question or issue with the PR it is moved back to the "In Progress" column.
     * Note open question on how to handle this for non-collaborators, since they cannot move cards around on waffle.io.
+
+
+For more details of the tags and columns in [waffle](https://waffle.io/lightblue-platform/lightblue), take a look (or even comment if you have any question) on [this nabble thread](http://dev.forum.lightblue.io/How-to-improve-the-communication-solve-some-issues-the-best-way-to-the-asked-questions-to-issue-requd-td155.html#a163).
