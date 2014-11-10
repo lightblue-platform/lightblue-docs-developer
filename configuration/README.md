@@ -113,11 +113,17 @@ file has the following format:
 
 ```
 {
+  "validateRequests" : true or false,
   "type" : <configuration class name>,
   "hookConfigurationParsers": [<hook configuration parser class names>],
   <configuration>
 }
 ```
+
+The "validateRequests" field determines whether calls receiving JSON
+documents will validate the submitted JSON documents with respect to
+their schema. These are metadata, schema, and entity info
+documents. By default, requests are not validated.
 
 The "type" field gives the Java class name implementing
 `com.redhat.lightblue.config.metadata.MetadataConfiguration`. Once the
@@ -165,6 +171,7 @@ format:
 
 ```
 {
+   "validateRequests" : true or false,
    "controllers" : [
       {
         "datastoreType" : <datasourceName>,
@@ -174,6 +181,7 @@ format:
    ]
 }
 ```
+  * validateRequests: If true, requests are validated using their JSON schema. Defaults to false.
 
   * datastoreType : Name of the datastore type for which this
     controller is to be used. This is the data store type used in
