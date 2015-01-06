@@ -40,7 +40,7 @@ Two things need to be done to setup lightblue.  First, deploy the lightblue modu
 ```
 cd lightblue-rest
 sudo mkdir -p /usr/share/wildfly/modules/com/redhat/lightblue/main
-sudo cp etc/mongo/* /usr/share/wildfly/modules/com/redhat/lightblue/main
+sudo cp etc/jbossas/modules/com/redhat/lightblue/main/* /usr/share/wildfly/modules/com/redhat/lightblue/main
 ```
 
 And now the RPMs can be deployed:
