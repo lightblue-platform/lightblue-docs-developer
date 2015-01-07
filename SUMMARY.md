@@ -18,4 +18,5 @@
 * [Key Decisions](key_decisions/README.md)
 * [Troubleshoot](troubleshoot/README.md)
 * [Formatting](formatting/README.md)
+* [Releasing](releasing/README.md)
 
