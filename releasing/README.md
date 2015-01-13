@@ -30,4 +30,4 @@ git checkout master
 ```
 
 ## Troubleshooting
-If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue.  The Maven release plugin is state
+If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue.  The Maven release plugin is stateful, so it should be able to resume where it left off without retrying the steps that completed successfully.
