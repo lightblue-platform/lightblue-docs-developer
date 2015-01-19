@@ -12,8 +12,8 @@ sudo yum install rpm-build git maven java-1.7.0-openjdk-devel
 
 ## Setup Environment
 There is a possibility of a [man-in-the-middle attack](https://github.com/lightblue-platform/lightblue-core/issues/106) when getting artifacts from Maven Central with default settings.  The root directory of each maven project has a settings.xml file that will override the default.  It is recommended that this setup is used.  There are a few options for using the override:
-* Copy the settings.xml to your ~/.m2 directory.
-* Specify the file with each build using option `-s ./settings.xml`.
+* Copy ./etc/settings.xml to your ~/.m2 directory.
+* Specify the file with each build using option `-s ./etc/settings.xml`.
 * [Configure this yourself](http://central.sonatype.org/pages/consumers.html#apache-maven).
 * Do nothing, use defaults (**NOT RECOMMENDED!**).
 
@@ -25,7 +25,7 @@ for REPO in "lightblue-core" "lightblue-mongo" "lightblue-rest" "lightblue-appli
 do
     git clone https://github.com/lightblue-platform/${REPO}.git
     pushd ${REPO}
-    mvn clean install -s ./settings.xml
+    mvn clean install -s ./etc/settings.xml
     popd
 done;
 ```
@@ -41,7 +41,7 @@ To get all dependencies built locally instead of pulled from sonatype follow [Ch
 
 ```
 cd lightblue-rest
-mvn clean install -P rpm -s ./settings.xml
+mvn clean install -P rpm -s ./etc/settings.xml
 ```
 
 ## Build RPM's for Wildfly
@@ -51,5 +51,5 @@ To get all dependencies built locally instead of pulled from sonatype follow [Ch
 
 ```
 cd lightblue-rest
-mvn clean install -P wildfly -P rpm -s ./settings.xml
+mvn clean install -P wildfly -P rpm -s ./etc/settings.xml
 ```

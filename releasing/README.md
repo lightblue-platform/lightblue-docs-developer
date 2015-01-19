@@ -22,11 +22,11 @@ lightblue-platform releases are built with Maven and released to the [Open Sourc
 1. cd to the repo you want to release
 2. Make sure you are on the master branch (script will complain if you don't)
 ```
-git checkout master 
+git checkout master
 ```
-3. Run ./release.sh <release version> <new snapshot version>
+3. Run ./etc/release.sh <release version> <new snapshot version>
 ```
-./release.sh 1.2.0 1.3.0-SNAPSHOT
+./etc/release.sh 1.2.0 1.3.0-SNAPSHOT
 ```
 
 ## Troubleshooting
