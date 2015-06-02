@@ -29,5 +29,19 @@ git checkout master
 ./etc/release.sh 1.2.0 1.3.0-SNAPSHOT
 ```
 
+### Release Order
+Items must be built in the following order of phases, but items with the same phase number can be built simultaneously.
+
+| Phase | Project|Note
+| ----- | -------|----
+| 1 | core
+| 2 | mongo
+| 3 | audit-hook
+| 3 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
+| 4 | rest
+| 5 | client
+| 6 | applications
+| 6 | migrator | manual
+
 ## Troubleshooting
 If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue.  The Maven release plugin is stateful, so it should be able to resume where it left off without retrying the steps that completed successfully.
