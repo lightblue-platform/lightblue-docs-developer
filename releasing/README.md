@@ -30,7 +30,7 @@ git checkout master
 ```
 
 ### Release Order
-Items must be released in order of phases, but items with the same phase number can be released simultaneously.
+Items must be built in the following order of phases, but items with the same phase number can be built simultaneously.
 
 | Phase | Project|Note
 | ----- | -------|----
