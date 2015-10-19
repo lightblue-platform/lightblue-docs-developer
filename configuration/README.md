@@ -140,13 +140,21 @@ For MongoDB metadata implementation, configuration looks like this:
 {
     "type" : "com.redhat.lightblue.mongo.config.MongoMetadataConfiguration",
     "dataSource" : "mongo",
-    "collection": "metadata"
+    "collection": "metadata",
+    "cachePeekIntervalMsec": 10000,
+    "cacheTTLMsec": 60000
 }
 ```
 
   * dataSource : Name of the datasource in datasources configuration
     where metadata is stored.
   * collection: MongoDB collection used to store metadata
+  * cachePeekIntervalMsec: The interval with which the metadata cache will
+    peek into the database to see if anything has changed. The cache will
+    remain valid if no changes were detected in the metadata database.
+    Defaults to 10000 (10 seconds).
+  * cacheTTLMsec: The interval with which the metadata cache will refresh
+    unconditionally. Defaults to  600000 (10 minutes)
 
 ### Example Metadata Configuration
 Example with MongoDB metadata config and audit hook parser:
