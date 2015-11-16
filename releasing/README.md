@@ -50,7 +50,7 @@ git checkout master
 ```
 ./etc/release.sh 1.2.0 1.3.0-SNAPSHOT
 ```
-4. You will be asked to specify release and development versions for various lightblue artifacts. Note that some of them (lightblue-applications and lightblue-client) have different versionsing than remaining artifacts. This is a manual, error prone process. If you make a mistake, Ctrl + c and start again.
+4. NOTES: You may be be asked to specify release and development versions for various lightblue artifacts. This might mean the sonatype promotion to the central maven repository is not complete. Note that some of them (lightblue-applications and lightblue-client) have different versionsing than remaining artifacts. This is a manual, error prone process. If you make a mistake, Ctrl + c and start again.
 5. You will be asked to specify the password for your private gpg key.
 6. You will be asked to specify the password for your github account.
 
@@ -59,14 +59,15 @@ Items must be built in the following order of phases, but items with the same ph
 
 | Phase | Project|Note
 | ----- | -------|----
-| 1 | core
-| 2 | mongo
-| 3 | audit-hook
-| 3 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
-| 4 | rest
-| 5 | client
-| 6 | applications
-| 6 | migrator | manual
+| 1 | core|
+| 2 | mongo|
+| 3 | audit-hook|
+| 4 | esb-hook|
+| 5 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
+| 6 | rest|
+| 7 | client|
+| 8 | applications|
+| 9 | migrator | manual
 
 ## Troubleshooting
 If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue. The Maven release plugin is stateful, so it should be able to resume where it left off without retrying the steps that completed successfully.
