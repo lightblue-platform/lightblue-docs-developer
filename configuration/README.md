@@ -4,21 +4,21 @@ implementations, this means they are installed as an EAP6 module, and
 jboss-deployment-structure.xml is included to refer to that module.
 
 There are four configuration units:
- * Datasources: This configuration defines the datasources accessible
+ * **Datasources**: This configuration defines the datasources accessible
    to Lightblue. It is managed by
    com.redhat.lightblue.config.common.DataSourcesConfiguration
    class. The datasources are initialized first, and used by both
    metadata and CRUD configurations. It is stored in "datasources.json".
- * Metadata: The structure of this configuration is determined by the
+ * **Metadata**: The structure of this configuration is determined by the
    actual metadata implementation. It is initialized and managed by
    com.redhat.lightblue.config.metadata.MetadataManager class. It is
    stored in "lightblue-metadata.json".
- * CRUD: This configuration lists all the CRUD implementations known
+ * **CRUD**: This configuration lists all the CRUD implementations known
    to Lightblue. It provides the datastore type that referenced from
    entity metadata, and the factory class to create instances of
    the CRUD implementation. The list of all datasources are passed
    to the factory. It is stored in "lightblue-crud.json".
- * config.properties: This is the hystrix configuration.
+ * c**onfig.properties**: This is the hystrix configuration.
 
 ## Datasources
 
@@ -58,43 +58,54 @@ A MongoDB datasource definition looks like this:
 
 ```
 {
-   "mongo" : {
-     "type" : "com.redhat.lightblue.mongo.config.MongoConfiguration",
-     "metadataDataStoreParser" : "com.redhat.lightblue.metadata.mongo.MongoDataStoreParser",
-     "ssl" : false,
-     "noCertValidation" : false,
-     "database" : "mongo",
-     "credentials" : {
-       "mechanism": "MONGODB_CR_MECHANISM",
-       "userName" : "lightblue",
-       "password": "lbpassword",
-       "source" : "admin"
-     },
-     "server" :
-        {
-           "host" : "localhost",
-           "port" : "27017"
-        }
-
-   }
+	"mongo": {
+		"type": "com.redhat.lightblue.mongo.config.MongoConfiguration",
+		"metadataDataStoreParser": "com.redhat.lightblue.metadata.mongo.MongoDataStoreParser",
+		"ssl": false,
+		"noCertValidation": false,
+		"database": "mongo",
+		"credentials": {
+			"mechanism": "MONGODB_CR_MECHANISM",
+			"userName": "lightblue",
+			"password": "lbpassword",
+			"source": "admin"
+		},
+		"servers": [
+    		{
+    			"host": "localhost",
+    			"port": "27017"
+    		}
+		],
+		"driverOptions": {
+		    "writeConcern": "majority",
+		    "readPreference": "primaryPreferred",
+		    "maxQueryTimeMS": 75000,
+		    "maxResultSetSize": 15000
+		}
+	}
 }
 ```
 
-  * type : Java class that represents the configuration
-  * metadataDataStoreParser : If this datasource will be used to store
+  * `type`: Java class that represents the configuration
+  * `metadataDataStoreParser`: If this datasource will be used to store
     metadata, this should be initialized to the Java class
     implementing the metadata DataStoreParser interface.
-  * ssl : Whether to use ssl for database communications
-  * noCertValidation: If true, ssl certificate validation will be disabled. Do not
+  * `ssl`: Whether to use ssl for database communications
+  * `noCertValidation`: If true, ssl certificate validation will be disabled. Do not
     use this in production environments.
-  * database : The database in MongoDB to connect to
-  * credentials : This can be an array of credentials, or a single credential object
-     * mechanism: Possible values are GSSAPI_MECHANISM, MONGODB_CR_MECHANISM, MONGODB_X509_MECHANISM, PLAIN_MECHANSM
-     * userName : The user name
-     * password: The password
-     * source: The name of the database where the user info is defined
-  * server : The host and port of the server to connect to
-  * servers : Array of host and port of the servers to connect to
+  * `database`: The database in MongoDB to connect to
+  * `credentials`: This can be an array of credentials, or a single credential object
+     * `mechanism`: Possible values are GSSAPI_MECHANISM, MONGODB_CR_MECHANISM, MONGODB_X509_MECHANISM, PLAIN_MECHANSM
+     * `userName`: The user name
+     * `password`: The password
+     * `source`: The name of the database where the user info is defined
+  * `server`: The host and port of the server to connect to
+  * `servers`: Array of host and port of the servers to connect to
+  * `driverOptions`: Options for the mongo driver.
+    * `writeConcern`: Default write concern used for insert, update, save, and delete.  Can override with execution option per request.
+    * `readPreferences`: Default read preference used for find. Can override with execution option per request.
+    * `maxQueryTimeMS`: Default maximum time (in milliseconds) a find runs on the mongo server.  Can override with execution option per request.
+    * `maxResultSetSize`: maximum number of documents to return per request
 
 MongoDB makes a distinction between initializing with a "server" and
 with a "servers" list. If "server" is given, the host running the
