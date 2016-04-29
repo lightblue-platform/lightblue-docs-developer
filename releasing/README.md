@@ -68,6 +68,7 @@ Items must be built in the following order of phases, but items with the same ph
 | 7 | client|
 | 8 | applications|
 | 9 | migrator | manual
+| 10 | bom |
 
 ## Troubleshooting
 If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue. The Maven release plugin is stateful, so it should be able to resume where it left off without retrying the steps that completed successfully.
