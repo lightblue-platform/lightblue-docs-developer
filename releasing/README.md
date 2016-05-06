@@ -1,5 +1,5 @@
 # Releasing
-lightblue-platform releases are built with Maven and released to the [Open Source Software Repository Hosting (OSSRH)](http://central.sonatype.org/pages/ossrh-guide.html) available from Sonatype.  In order to be able to perform a release, you must be authorized to deploy to the lightblue, which can be be requested by opening an issue in the  [Sonatype JIRA Instance](https://issues.sonatype.org/).
+lightblue-platform releases are built with Maven and released to the [Open Source Software Repository Hosting (OSSRH)](http://central.sonatype.org/pages/ossrh-guide.html) available from Sonatype.  In order to be able to perform a release, you must be authorized to deploy to the lightblue, which can be be requested by opening an issue in the  [Sonatype JIRA Instance](https://issues.sonatype.org/). For example see [OSSRH-17406](https://issues.sonatype.org/browse/OSSRH-17406).
 
 ## Assumptions
 1. You have received access from Sonatype to deploy to the lightblue-platform repositories.
