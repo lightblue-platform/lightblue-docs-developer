@@ -61,8 +61,8 @@ Items must be built in the following order of phases, but items with the same ph
 | ----- | -------|----
 | 1 | core|
 | 2 | mongo|
-| 3 | audit-hook|
-| 4 | esb-hook|
+| 3 | ~~audit-hook~~ | Deprecated?
+| 4 | ~~esb-hook~~ | Deprecated?
 | 5 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
 | 6 | rest|
 | 7 | client|
