@@ -193,8 +193,15 @@ format:
    "validateRequests" : true or false,
    "controllers" : [
       {
-        "datastoreType" : <datasourceName>,
-        "controllerFactory" : <Class name>
+        "backend" : <datasourceName>,
+        "controllerFactory" : <Class name>,
+        "extensions": { 
+            "extensionType" : { configuration},
+            ...
+        },
+        "options": {
+            <backend specific options>
+        }
       },
       ...
    ]
@@ -202,8 +209,8 @@ format:
 ```
   * validateRequests: If true, requests are validated using their JSON schema. Defaults to false.
 
-  * datastoreType : Name of the datastore type for which this
-    controller is to be used. This is the data store type used in
+  * backend : Name of the backend for which this
+    controller is to be used. This is the backend used in
     metadata DataStore interface.
   * controllerFactory : Name of the class implementing
     com.redhat.lightblue.config.crud.ControllerFactory interface.
@@ -215,13 +222,55 @@ format:
 {
    "controllers" : [
       {
-        "datastoreType" : "mongo",
+        "backend" : "mongo",
         "controllerFactory" : "com.redhat.lightblue.mongo.config.MongoCRUDFactory"
       }
    ]
 }
 ```
 
-  * datastoreType : Name of the datastore type for which this
+  * backend : Name of the datastore type for which this
     controller is to be used, "mongo" in this example.
   * controllerFactory: the factory implementation for Mongo
+
+#### MongoDB Options
+
+Currently MongoDB CRUD backend supports these options:
+
+   * updateBatchSize (integer): Default value is 64. This controls the batch size of insert/update operations.
+   * concurrentModificationDetection (boolean): Default value is 'true'. When this is set, non-atomic upsert/update
+     operations will use optimistic locking to detect if the documents the current thread is operating on have been
+     modified by another thread during the update operation.
+
+#### MongoDB extensions
+
+##### Locking
+
+This extension, when configured, enables locking APIs using mongoDB backend. The configuration is as follows:
+
+```
+"extensions": {
+   "locking": [
+       {
+         "domain": "domain1",
+         "datasource": "source1",
+         "collection": "lockCollection"
+       },
+       {
+         "domain": "domain2",
+         "datasource": "source1",
+         "collection" : "lockCollection2"
+       },
+       ...
+    ]
+ }
+```
+
+Each element in "locking" array configures a locking domain. The
+locking domain is the "domain" argument used in the locking api, which
+logically separates locks used for different purposes. "datasource"
+gives the mongoDB datasource defined in datasources.json, and
+"collection" gives the collection in "datasource" that keeps the
+locking information.
+
+         
