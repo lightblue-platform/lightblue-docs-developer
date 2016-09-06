@@ -35,6 +35,7 @@ Where login/password are credentials to your sonatype account. For more informat
 ```xml
   <properties>
     <gpg.keyname>keyid</gpg.keyname>
+    <gpg.executable>gpg2</gpg.executable><!-- You need to use gpg2 on Fedora, otherwise it will default to gpg and won't be able to connect to gpg-agent (and ask you for password gazillion times... -->
   </properties>
 ```
 
@@ -66,8 +67,8 @@ Items must be built in the following order of phases, but items with the same ph
 | 5 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
 | 6 | rest|
 | 7 | client|
-| 8 | applications|
-| 9 | migrator | manual
+| 8 | ~~applications~~| Deprecated
+| 9 | migrator | Includes facade
 | 10 | bom |
 
 ## Troubleshooting
