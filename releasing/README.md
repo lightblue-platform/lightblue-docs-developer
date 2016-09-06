@@ -67,8 +67,8 @@ Items must be built in the following order of phases, but items with the same ph
 | 5 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
 | 6 | rest|
 | 7 | client|
-| 8 | applications|
-| 9 | migrator | manual
+| 8 | ~~applications~~| Deprecated
+| 9 | migrator | Includes facade
 | 10 | bom |
 
 ## Troubleshooting
