@@ -35,6 +35,7 @@ Where login/password are credentials to your sonatype account. For more informat
 ```xml
   <properties>
     <gpg.keyname>keyid</gpg.keyname>
+    <gpg.executable>gpg2</gpg.executable><!-- You need to use gpg2 on Fedora, otherwise it will default to gpg and won't be able to connect to gpg-agent (and ask you for password gazillion times... -->
   </properties>
 ```
 
