@@ -6,7 +6,7 @@
 | ---- | ----------- |
 | [Overview](http://lightblue.io/) | New to lightblue?  Start here! |
 | [Specifications](http://jewzaam.gitbooks.io/lightblue-specifications/content/) | The language and REST specifications for lightblue. |
-| [User Guide](http://docs.lightblue.io/) | How to use lightblue including getting started quickly on [OpenShift](http://openshift.com). |
+| [User Guide](http://docs.lightblue.io/) | How to use lightblue including [getting started quickly](http://docs.lightblue.io/cookbook/quickstart.html) on [OpenShift](http://openshift.com). |
 | [Developer Manual](http://dev.docs.lightblue.io/) | Want to contribute?  Take a look at the other books and then dive into this manual! |
 
 
