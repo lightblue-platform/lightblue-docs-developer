@@ -238,9 +238,17 @@ format:
 Currently MongoDB CRUD backend supports these options:
 
    * updateBatchSize (integer): Default value is 64. This controls the batch size of insert/update operations.
-   * concurrentModificationDetection (boolean): Default value is 'true'. When this is set, non-atomic upsert/update
+   * concurrentModification: Configuration options for concurrent modification detection:
+     * detection (boolean): Default value is 'true'. When this is set, non-atomic upsert/update
      operations will use optimistic locking to detect if the documents the current thread is operating on have been
      modified by another thread during the update operation.
+     * failureRetryCount (int): Default value is 3. When a concurrent modification is detected, the operation will be
+     retried this many times before giving up with an error.
+     * reevaluateQueryForRetry (boolean): Default value is 'true'. When true, if a concurrent modification is
+     detected on a document, the document is re-validated to see if it still matches the query. If it does,
+     update is retried, otherwise the document is left untouched. If set to 'false', updates on documents that are modified
+     by another thread will be retried unconditionally.
+     
 
 #### MongoDB extensions
 
