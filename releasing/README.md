@@ -65,11 +65,15 @@ Items must be built in the following order of phases, but items with the same ph
 | 3 | ~~audit-hook~~ | Deprecated?
 | 4 | ~~esb-hook~~ | Deprecated?
 | 5 | ldap? | Not officially released yet, but it is used as a test dependency for rest. So a new artifact may not need to be cut.
-| 6 | rest|
-| 7 | client|
-| 8 | ~~applications~~| Deprecated
-| 9 | migrator | Includes facade
-| 10 | bom |
+| 6 | plugins | release any plugins ( eg, lightblue-notification-hook ) that need to be updated.
+| 7 | rest|
+| 8 | client|
+| 9 | ~~applications~~| Deprecated
+| 10 | migrator | Includes facade
+| 11 | bom |
+
+#### Dependencies
+Due to the (current) implementation of plugins, they are included as a compile-time dependency for the rest phase. If you are not releasing a given plugin, when resolving SNAPSHOT dependencies for that phase, revert the dependency to the last stable release rather than just removing -SNAPSHOT as the script prompts you to do. Eg, 0.1.13-SNAPSHOT becomes 0.1.12 instead of 0.1.13, and the new dependency version will remain 0.1.13-SNAPSHOT.
 
 ## Troubleshooting
 If you encounter errors at any point during the release of a lightblue-platform project, try re-running the release script, and see if that corrects the issue. The Maven release plugin is stateful, so it should be able to resume where it left off without retrying the steps that completed successfully.
