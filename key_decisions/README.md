@@ -4,7 +4,8 @@ Over the design and development of lightblue some key design decisions have been
 They are not in any particular order.
 
 ## How will we represent date in JSON?
-APIs accept dates of the [format](http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html):  YYYYMMDD HHmmssSSSS+-ZZZZ
+APIs accept dates of the [format](http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html):  YYYYMMDDTHH:mm:ss.SSS+-ZZZZ
+(Note T is a literal string)
 
 All dates will be stored internally as UTC, with no TZ in the representation.
 All dates will be returned in UTC, with TZ appended.
