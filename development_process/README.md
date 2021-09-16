@@ -39,7 +39,7 @@ Someone decides to work on the issue and:
 2. If there are blocking issues:
     1. The original author fixes the issue and makes comments about resolution on the pull request.
     2. The fixes are reviewed, if good continue, else repeat this section.
-2. If review is good (no issues, clean merge, travis-ci build successful):
+2. If review is good (no issues, clean merge, build successful):
     1. The pull request is merged.
     2. If the original issue was not linked to the PR and therefore not auto-closed, the original issue should be closed manually.
 

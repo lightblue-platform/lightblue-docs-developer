@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lightblue-platform/lightblue.svg?branch=master)](https://travis-ci.org/lightblue-platform/lightblue) [![Coverage Status](https://coveralls.io/repos/lightblue-platform/lightblue/badge.png?branch=master)](https://coveralls.io/r/lightblue-platform/lightblue?branch=master)
+[![Coverage Status](https://coveralls.io/repos/lightblue-platform/lightblue/badge.png?branch=master)](https://coveralls.io/r/lightblue-platform/lightblue?branch=master)
 
 # Books!
 
